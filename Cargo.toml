@@ -1,0 +1,29 @@
+[package]
+name = "pure_lines"
+description = "A tool that beautify multiple lines"
+keywords = ["mutipule_lines"]
+authors = ["maplepie"]
+repository = "https://github.com/maplepie/pure_lines"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+version = "0.1.0"
+edition = "2018"
+
+[[example]]
+name = "pure_lines"
+path = "examples/pure_lines.rs"
+
+[[test]]
+name = "pure_lines"
+path = "tests/pure_lines.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "pure_lines"
+harness = false
