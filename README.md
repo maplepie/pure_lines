@@ -3,7 +3,7 @@
 A tool that beautify multiple lines.
 * Trim first line if empty
 * Trim min indent
-
+  
 ## Problem
 
 What you need str:
@@ -55,7 +55,7 @@ fn main(){
     // world
     // ==============
 }
-```
+```  
 ### Example with prefix
 ``` rust
 use pure_lines;
@@ -85,4 +85,15 @@ fn main(){
     // > world
     // ==============
 }
+```
+  
+## Advance
+If you want your code more faster, using the `quick` feature.
+quick feature trim indent based on the first line which is not empty.
+> ⚠Note: make sure the after lines indent must bigger than the first，or you will lose some string.
+
+your `Cargo.toml` could look like this:
+``` toml
+[dependencies]
+pure_lines = { version = "0.2.0", features = ["quick"] }
 ```

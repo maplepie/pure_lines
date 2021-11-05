@@ -1,13 +1,16 @@
 [package]
 name = "pure_lines"
 description = "A tool that beautify multiple lines"
-keywords = ["mutipule_lines"]
+keywords = ["lines","string","multiple"]
 authors = ["maplepie"]
 repository = "https://github.com/maplepie/pure_lines"
-license = "MIT/Apache-2.0"
+license = "MIT"
 readme = "README.md"
 version = "0.1.0"
 edition = "2018"
+
+[features]
+quick = []
 
 [[example]]
 name = "pure_lines"

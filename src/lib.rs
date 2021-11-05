@@ -69,6 +69,9 @@ fn indent_min(doc:&str) -> u32 {
                 },
                 _ => {
                     if num < result {
+                        if cfg!(feature = "quick") {
+                            return num;
+                        }
                         result = num;
                     }
                     break;
@@ -98,8 +101,17 @@ mod tests {
         assert_eq!(trim_indent(&doc,"",4), "hello\nworld!");
         assert_eq!(trim_indent(&doc,"> ",4), "> hello\n> world!");
     }
+    
     #[test]
+    #[cfg(not(feature = "quick"))]
     fn test_indent_min() {
+        let doc = "    hello\n    world!";
+        assert_eq!(indent_min(doc), 4);
+    }
+
+    #[test]
+    #[cfg(feature = "quick")]
+    fn test_indent_min_quick() {
         let doc = "    hello\n    world!";
         assert_eq!(indent_min(doc), 4);
     }
